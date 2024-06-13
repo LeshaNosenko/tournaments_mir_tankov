@@ -15,7 +15,7 @@ async function loadTournaments() {
         selectElement.appendChild(option);
     });
 
-    selectElement.addEventListener('change', function () {
+    selectElement.addEventListener('select', () => {
         const selectedOption = selectElement.options[selectElement.selectedIndex];
         const selectedTournamentName = selectedOption.textContent;
         const selectedTournamentId = selectedOption.value;
@@ -249,7 +249,6 @@ async function fetchData(offset, limit, clearTable = true, tournamentId) {
 			}
 			const selectedOption = document.getElementById('tournamentSelect').value;
 			fetchData(offset, limit, true, selectedOption);
-			fetchData(offset, limit, selectedOption);
 		}
 
 		async function searchPlayerByName(name, offset, limit, tournamentId) {
